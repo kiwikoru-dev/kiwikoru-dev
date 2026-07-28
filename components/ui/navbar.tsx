@@ -99,7 +99,7 @@ function closedState(nav: HTMLElement) {
  * One surface that morphs: condensed (52×149 pill) ⇄ expanded (406×365 menu).
  */
 export default function Navbar() {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
   const activeMode = useMode();
   const pathname = usePathname();
   const isHome = pathname === "/";
@@ -213,12 +213,12 @@ export default function Navbar() {
         // inline on mount + toggle; the max-md values just approximate the
         // bottom-centre pill (140-wide, flush to the frame bottom) so there's no
         // wrong-shaped flash before the first gsap.set lands.
-        className="pointer-events-none absolute bottom-[108px] left-[332px] right-[22px] top-[108px] rounded-[61px] border border-white/30 bg-white/10 shadow-[inset_0_0_28.3px_0_rgba(255,255,255,0.25)] backdrop-blur-[10px] max-md:bottom-0 max-md:left-[101px] max-md:right-[101px] max-md:top-[368px] max-md:rounded-[26px]"
+        className="pointer-events-none absolute inset-0 rounded-[34px] border border-white/30 bg-white/10 shadow-[inset_0_0_28.3px_0_rgba(255,255,255,0.25)] backdrop-blur-[10px]"
       />
 
       {/* Menu content — fixed in the nav frame (so it never slides as the box
           grows) and clickable only while open. Each block fades + rises in via
-          GSAP; `opacity-0` is the pre-JS / no-JS hidden state. */}
+          GSAP; `` is the pre-JS / no-JS hidden state. */}
       <div
         id={panelId}
         aria-hidden={!open}
@@ -228,7 +228,7 @@ export default function Navbar() {
       >
         <span
           data-menu-item
-          className="absolute left-[28px] top-[30px] text-[31px] font-medium leading-none tracking-[-0.03em] underline decoration-from-font underline-offset-[6px] opacity-0 max-md:top-[28px]"
+          className="absolute left-[28px] top-[30px] text-[31px] font-medium leading-none tracking-[-0.03em] underline decoration-from-font underline-offset-[6px] max-md:top-[28px]"
         >
           menu
         </span>
@@ -245,7 +245,7 @@ export default function Navbar() {
           {LINKS.map((link) => {
             const active = pathname === link.href;
             return (
-              <li key={link.label} data-menu-item className="opacity-0">
+              <li key={link.label} data-menu-item>
                 <Link
                   href={link.href}
                   aria-current={active ? "page" : undefined}
@@ -272,7 +272,7 @@ export default function Navbar() {
           data-menu-item
           role="group"
           aria-label="Sky mode"
-          className="absolute right-[28px] top-[80px] hidden flex-col items-center gap-[6px] opacity-0 max-md:flex"
+          className="absolute right-[28px] top-[80px] hidden flex-col items-center gap-[6px]  max-md:flex"
         >
           {MODE_ITEMS.map(({ mode, label, Icon }) => {
             const isActive = mode === activeMode;
@@ -302,7 +302,7 @@ export default function Navbar() {
         <div
           data-menu-item
           aria-hidden
-          className="absolute left-[26px] right-[26px] bottom-[60px] hidden h-px bg-white/20 opacity-0 max-md:block"
+          className="absolute left-[26px] right-[26px] bottom-[60px] hidden h-px bg-white/20  max-md:block"
         />
 
         {/* Social row. Mobile top moved 288 → 306: the link column grew from 4
@@ -310,7 +310,7 @@ export default function Navbar() {
             clears the hairline (bottom-[60px] ≈ y 360) and the 52px toggle bar. */}
         <div
           data-menu-item
-          className="absolute left-[26px] top-[310px] flex items-center gap-[7px] opacity-0 max-md:top-[306px]"
+          className="absolute left-[26px] top-[310px] flex items-center gap-[7px]  max-md:top-[306px]"
         >
           {SOCIALS.map(({ label, href, Icon }) => (
             <a

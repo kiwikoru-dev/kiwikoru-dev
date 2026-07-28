@@ -146,7 +146,7 @@ export default function WhyStay() {
         <div
           data-whystay-window
           aria-hidden
-          className="pointer-events-none absolute left-1/2 top-[calc(50%+27.5px)] h-[380px] w-[748px] max-w-full -translate-x-1/2 -translate-y-1/2"
+          className="pointer-events-none absolute left-1/2 top-[calc(50%+27.5px)] h-[380px] w-[920px] max-w-full -translate-x-1/2 -translate-y-1/2"
         >
           <div data-reel-col className="absolute inset-0">
             {PHRASES.map((phrase, i) => (

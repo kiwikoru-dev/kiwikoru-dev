@@ -3,7 +3,7 @@ import Testimonials from "@/components/sections/testimonials/testimonials";
 import PageHeader from "@/components/ui/page-header";
 
 export const metadata: Metadata = {
-  title: "reviews — kiwikoru",
+  title: "Reviews — kiwikoru",
   description: "What clients say about working with KiwiKoru.",
 };
 
@@ -25,7 +25,7 @@ export default function ReviewsPage() {
   return (
     <>
       <PageHeader
-        title="reviews"
+        title="Reviews"
         sub="what it's like on the other side of a migration."
       />
       <Testimonials />

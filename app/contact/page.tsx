@@ -4,7 +4,7 @@ import FinalCta from "@/components/sections/final-cta/final-cta";
 import PageHeader from "@/components/ui/page-header";
 
 export const metadata: Metadata = {
-  title: "contact — kiwikoru",
+  title: "Contact — kiwikoru",
   description:
     "Talk to KiwiKoru — info@kiwikoru.com, +64 21 0816 2162, or book a 15-minute cloud review. Weymouth, Auckland.",
 };
@@ -24,7 +24,7 @@ export default function ContactPage() {
   return (
     <>
       <PageHeader
-        title="contact"
+        title="Contact"
         sub="tell us what you're running and where it hurts. we'll come back with a plan, not a sales deck."
       />
       <ContactCard />

@@ -5,7 +5,7 @@ import WhyUsPillars from "@/components/sections/why-us-pillars/why-us-pillars";
 import PageHeader from "@/components/ui/page-header";
 
 export const metadata: Metadata = {
-  title: "why us — kiwikoru",
+  title: "Why Us — kiwikoru",
   description:
     "Passionate, professional, and monitoring around the clock — and how that compares to hiring in-house or going to a consultancy.",
 };
@@ -15,7 +15,7 @@ export default function WhyUsPage() {
   return (
     <>
       <PageHeader
-        title="why us"
+        title="Why Us"
         sub="three things kiwikoru is built on — and an honest look at the alternatives."
       />
       {/* KiwiKoru's own "Why Choose Us" pillars (real copy). */}

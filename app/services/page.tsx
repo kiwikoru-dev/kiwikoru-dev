@@ -6,7 +6,7 @@ import ServiceList from "@/components/sections/service-list/service-list";
 import PageHeader from "@/components/ui/page-header";
 
 export const metadata: Metadata = {
-  title: "services — kiwikoru",
+  title: "Services — kiwikoru",
   description:
     "AWS consulting, cloud migration, infrastructure management, app development and AWS governance — with 24/7 monitoring.",
 };
@@ -23,7 +23,7 @@ export default function ServicesPage() {
   return (
     <>
       <PageHeader
-        title="services"
+        title="Services"
         sub="six things we do on aws — from the first architecture call through to the 3am page nobody wants."
       />
       {/* KiwiKoru's own six service descriptions (real copy). */}
