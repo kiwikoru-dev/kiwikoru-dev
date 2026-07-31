@@ -37,7 +37,7 @@ import { makeSkyBackdrop } from "@/lib/theme/sky-backdrop";
  * a feature the user is looking at.
  */
 
-const FONT = "/fonts/product-sans-medium.v2.typeface.json";
+const FONT = "/fonts/product-sans-medium.v3.typeface.json";
 
 const CAMERA_Z = 5.4;
 

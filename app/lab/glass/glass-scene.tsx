@@ -24,7 +24,7 @@ import { Leva, useControls, button } from "leva";
  * something vivid to bend — Phase 2 replaces it with the real hero backdrop.
  */
 
-const FONT = "/fonts/product-sans-medium.v2.typeface.json";
+const FONT = "/fonts/product-sans-medium.v3.typeface.json";
 const SHOTS = ["/shots/shot3.avif", "/shots/shot4.avif", "/shots/shot5.avif", "/shots/shot6.avif", "/shots/shot7.avif"];
 
 // Latest Leva values, kept module-side so the "copy config" button reads fresh

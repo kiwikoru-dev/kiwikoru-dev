@@ -124,7 +124,7 @@ A vendored file that can't satisfy these as-is gets **forked deliberately** (sho
 
 Note: Product Sans is Google's proprietary corporate typeface — a licensing consideration, flagged in the source comments.
 
-### ⚠️ `public/fonts/product-sans-medium.v2.typeface.json` is a SUBSET, and it is VERSIONED
+### ⚠️ `public/fonts/product-sans-medium.v3.typeface.json` is a SUBSET, and it is VERSIONED
 
 That file feeds every `<Text3D>` on the site — the glass wordmark (intro, footer, `/lab/glass`) **and** the five page headings (`glass-heading-scene.tsx`). It is **not a full face**: it carries only the glyphs those strings need — currently the 17-glyph union `a b c e h i k n o r s t u v w y` + space (~7.6 KB), covering `kiwikoru` · `services` · `about` · `reviews` · `why us` · `contact`.
 
