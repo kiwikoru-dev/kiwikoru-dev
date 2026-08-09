@@ -14,12 +14,14 @@
  * URL-clean (no spaces). Order here is the order tiles are laid onto the
  * formation — reorder entries to reshuffle neighbours.
  *
- * ⚠️ PLACEHOLDER: every field here is stand-in data. The IMAGES are still the
- * Figma "Startup" collage stills (they show web/brand design work, not cloud
- * infrastructure — they do not represent KiwiKoru projects). The NAMES are
- * deliberately left as "Project NN" rather than invented client names, so
- * nothing reads as a real engagement that isn't one. The `type` buckets were
- * re-labelled to KiwiKoru's service lines but assigned arbitrarily.
+ * ⚠️ PLACEHOLDER: every field here is stand-in data. The IMAGES are now
+ * free-license (CC / public-domain) cloud & data-center stock (sourced via
+ * Openverse / Wikimedia Commons — see IMAGE-CREDITS.md; most are CC-BY, so
+ * attribution is required before public launch). They are illustrative, NOT real
+ * KiwiKoru projects. The NAMES are deliberately left as "Project NN" rather than
+ * invented client names, so nothing reads as a real engagement that isn't one.
+ * The `type` buckets were re-labelled to KiwiKoru's service lines but assigned
+ * arbitrarily. Replace with real, permissioned case studies before launch.
  *
  * Replace all three together with real, permissioned case studies. Until then
  * this section is a layout demo, not a portfolio.
@@ -42,10 +44,10 @@ export interface CloudProject {
 
 /** The filter tabs, in display order. Labels are UI copy (house lowercase). */
 export const PROJECT_FILTERS: { value: CloudFilter; label: string }[] = [
-  { value: "all", label: "all" },
-  { value: "migration", label: "migrations" },
-  { value: "managed", label: "managed" },
-  { value: "build", label: "app builds" },
+  { value: "all", label: "All" },
+  { value: "migration", label: "Migrations" },
+  { value: "managed", label: "Managed" },
+  { value: "build", label: "App builds" },
 ];
 
 const dir = "/portfolio/cloud";

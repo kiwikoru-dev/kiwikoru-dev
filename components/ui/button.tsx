@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Link from "next/link";
 import gsap from "gsap";
 import type {
   AnchorHTMLAttributes,
@@ -250,14 +251,34 @@ export default function Button({
   );
 
   if (props.href !== undefined) {
+    // Internal routes (start with "/") go through Next's <Link> so navigation is
+    // client-side (RouteTransition resets Lenis + refreshes ScrollTrigger); real
+    // anchors (#…), mailto:, tel: and external http links stay a plain <a>.
+    const isInternal = props.href.startsWith("/");
+    const inner = (
+      <>
+        {aura}
+        <span className="relative">{children}</span>
+      </>
+    );
+    if (isInternal) {
+      return (
+        <Link
+          ref={rootRef as React.RefObject<HTMLAnchorElement>}
+          className={rootCls}
+          {...props}
+        >
+          {inner}
+        </Link>
+      );
+    }
     return (
       <a
         ref={rootRef as React.RefObject<HTMLAnchorElement>}
         className={rootCls}
         {...props}
       >
-        {aura}
-        <span className="relative">{children}</span>
+        {inner}
       </a>
     );
   }

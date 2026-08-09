@@ -34,35 +34,35 @@ export type Service = {
 
 export const SERVICES: readonly Service[] = [
   {
-    name: "aws consulting",
-    lead: "a roadmap, not a sales deck.",
-    body: "our certified aws architects give strategic guidance to navigate the cloud. we analyse your goals to design secure, scalable, cost-efficient infrastructure — whether you're launching new applications or optimising the workloads you already run.",
+    name: "AWS consulting",
+    lead: "A roadmap, not a sales deck.",
+    body: "Our certified AWS architects give strategic guidance to navigate the cloud. We analyse your goals to design secure, scalable, cost-efficient infrastructure — whether you're launching new applications or optimising the workloads you already run.",
   },
   {
-    name: "migration",
-    lead: "move with confidence.",
-    body: "we execute flawless migrations that minimise downtime and keep data integrity absolute. moving to the cloud or switching providers, the approach is the same: plan first, prove it, then cut over — with business continuity throughout.",
+    name: "Migration",
+    lead: "Move with confidence.",
+    body: "We execute flawless migrations that minimise downtime and keep data integrity absolute. Moving to the cloud or switching providers, the approach is the same: plan first, prove it, then cut over — with business continuity throughout.",
   },
   {
-    name: "managed services",
-    lead: "building dreams requires focus.",
-    body: "we handle your cloud infrastructure so you can concentrate on the business. from 24/7 monitoring to automated backups, we keep systems available, secure, and running at peak performance.",
+    name: "Managed services",
+    lead: "Building dreams requires focus.",
+    body: "We handle your cloud infrastructure so you can concentrate on the business. From 24/7 monitoring to automated backups, we keep systems available, secure, and running at peak performance.",
   },
   {
-    name: "infra management",
-    lead: "the day-to-day, handled.",
+    name: "Infra management",
+    lead: "The day-to-day, handled.",
     // AUTHORED — the source duplicated the AWS Governance text here.
-    body: "the ongoing care your environment needs to stay healthy: right-sized compute, patching on a schedule, capacity watched before it bites, and infrastructure defined as code you own. no drift, no surprises on the invoice.",
+    body: "The ongoing care your environment needs to stay healthy: right-sized compute, patching on a schedule, capacity watched before it bites, and infrastructure defined as code you own. No drift, no surprises on the invoice.",
     authored: true,
   },
   {
-    name: "aws governance",
-    lead: "control without compromise.",
-    body: "true innovation requires a safe environment. we implement governance frameworks that balance agility with control — clear guardrails and automated policies, so your teams can build and deploy fast without sacrificing security, compliance, or budget discipline.",
+    name: "AWS governance",
+    lead: "Control without compromise.",
+    body: "True innovation requires a safe environment. We implement governance frameworks that balance agility with control — clear guardrails and automated policies, so your teams can build and deploy fast without sacrificing security, compliance, or budget discipline.",
   },
   {
-    name: "app development",
-    lead: "vision into reality.",
-    body: "custom development for high-performance mobile and web applications built to engage users. cloud-native architectures mean a seamless experience across devices, and an app that stays easy to scale as you expand.",
+    name: "App development",
+    lead: "Vision into reality.",
+    body: "Custom development for high-performance mobile and web applications built to engage users. Cloud-native architectures mean a seamless experience across devices, and an app that stays easy to scale as you expand.",
   },
 ];

@@ -20,7 +20,7 @@ const FADE = "linear-gradient(to bottom, black 78%, transparent 96%)";
 const AURA =
   "conic-gradient(from calc(var(--aura-angle, 0) * 1deg), #5ea8ff, #a06bff, #ff6ec7, #ff9d5c, #ffe36e, #5ef2c8, #5ea8ff)";
 
-const DELIVERED = "delivered";
+const DELIVERED = "Delivered";
 
 // Each tile flies in from the direction it sits relative to the 594×510 plane's
 // centre (top-left tile from the top-left, etc.), so the collage assembles from

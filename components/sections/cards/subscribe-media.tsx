@@ -27,8 +27,8 @@ const PAD_X = 26.667;
 
 // The three pill states, in sequence.
 const START_LABEL = "let’s get started";
-const CREATING_LABEL = "creating your board";
-const READY_LABEL = "board ready";
+const CREATING_LABEL = "Creating your board";
+const READY_LABEL = "Board ready";
 
 // Pill fills. Glass = translucent white over blur; white = the delivered look.
 // backgroundColor is animated (white alpha 0.10 → 1) rather than a gradient so

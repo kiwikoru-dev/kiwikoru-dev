@@ -40,7 +40,7 @@ import { PHRASES, REEL_STEP } from "./why-stay-data";
 
 // Heading segments — "stay" is the Instrument Serif accent (Figma 302:1460).
 const HEADING: { text: string; serif: boolean }[] = [
-  { text: "why teams ", serif: false },
+  { text: "Why teams ", serif: false },
   { text: "stay", serif: true },
 ];
 
@@ -116,7 +116,7 @@ export default function WhyStay() {
           tracking is the same -0.03em, now in em so it scales with the token.
           On mobile it rests 115px above centre, clear of the 0.4-scaled reel. */}
       <h2 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[217px] max-md:-translate-y-[115px] whitespace-nowrap text-center font-product text-display font-light leading-[1.1] tracking-[-0.03em] text-white">
-        <span className="sr-only">why teams stay</span>
+        <span className="sr-only">Why teams stay</span>
         <HeadingWords />
       </h2>
 

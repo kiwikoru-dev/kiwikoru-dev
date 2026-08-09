@@ -17,12 +17,12 @@
 // Changing how many phrases there are re-times the clouds; changing the wording
 // does not.
 export const PHRASES = [
-  "aws certified",
+  "AWS certified",
   "24/7 monitoring",
-  "cost optimised",
-  "migration first",
-  "professional",
-  "genuinely passionate",
+  "Cost optimised",
+  "Migration first",
+  "Professional",
+  "Genuinely passionate",
 ] as const;
 
 export const REEL_STEP = 118; // px between phrase centres (91px line + 27px gap)

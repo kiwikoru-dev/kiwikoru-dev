@@ -16,7 +16,7 @@ export default function AboutPage() {
     <>
       <PageHeader
         title="About"
-        sub="a small aws practice in auckland, looking after the boring parts of other people's cloud."
+        sub="A small AWS practice in Auckland, looking after the boring parts of other people's cloud."
       />
       {/* KiwiKoru's own "build the business of their dreams" copy (real). */}
       <AboutStory />

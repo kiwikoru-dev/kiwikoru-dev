@@ -9,25 +9,32 @@ import { useMode } from "@/lib/theme/use-mode";
 import {
   CloseIcon,
   FacebookSocial,
+  HomeIcon,
+  InfoIcon,
   InstagramSocial,
+  LayersIcon,
   LinkedInSocial,
+  MailIcon,
   MenuLines,
+  SparklesIcon,
+  StarIcon,
   XSocial,
 } from "./icons";
 import BrandMark from "./brand-mark";
 import { MODE_ITEMS } from "./mode-switcher";
 
-type NavLink = { label: string; href: string };
+type NavLink = { label: string; href: string; Icon: typeof HomeIcon };
 
 // Mirrors the live kiwikoru.com menu (Home / Services / About / Reviews /
 // Why Us / Contact). These are REAL ROUTES under app/, not in-page anchors.
+// Each carries an icon for the collapsed rail (the pill markup below).
 const LINKS: NavLink[] = [
-  { label: "home", href: "/" },
-  { label: "services", href: "/services" },
-  { label: "about", href: "/about" },
-  { label: "reviews", href: "/reviews" },
-  { label: "why us", href: "/why-us" },
-  { label: "contact", href: "/contact" },
+  { label: "Home", href: "/", Icon: HomeIcon },
+  { label: "Services", href: "/services", Icon: LayersIcon },
+  { label: "About", href: "/about", Icon: InfoIcon },
+  { label: "Reviews", href: "/reviews", Icon: StarIcon },
+  { label: "Why Us", href: "/why-us", Icon: SparklesIcon },
+  { label: "Contact", href: "/contact", Icon: MailIcon },
 ];
 
 // ⚠️ PLACEHOLDER hrefs — KiwiKoru's real profile URLs were never supplied, and
@@ -55,7 +62,11 @@ const SOCIALS = [
 // the blur. Open and close are NOT a symmetric reverse: on close the content
 // fades out FIRST (fast), then the glass collapses, so the retracting frame
 // never strands the links visibly outside it (see the toggle effect).
-const CLOSED = { top: 108, right: 22, bottom: 108, left: 332, borderRadius: 61 };
+// Long, roomy collapsed pill so the icon rail (logo + one glyph per link) reads
+// as a proper vertical navbar, not a lone button. Pinned to the right edge,
+// vertically centred: right/left set the ~80px width, top/bottom the ~325px
+// height (both insets into the 406×365 nav box).
+const CLOSED = { top: 20, right: 22, bottom: 20, left: 304, borderRadius: 40 };
 const OPEN = { top: 0, right: 0, bottom: 0, left: 0, borderRadius: 34 };
 const DURATION = 0.65;
 const EASE = "power2.inOut";
@@ -99,7 +110,7 @@ function closedState(nav: HTMLElement) {
  * One surface that morphs: condensed (52×149 pill) ⇄ expanded (406×365 menu).
  */
 export default function Navbar() {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   const activeMode = useMode();
   const pathname = usePathname();
   const isHome = pathname === "/";
@@ -108,6 +119,22 @@ export default function Navbar() {
   const tlRef = useRef<gsap.core.Timeline | null>(null);
   const mounted = useRef(false);
   const panelId = useId();
+
+  // On pointers that can hover (desktop), hovering the pill expands it and
+  // leaving collapses it. Touch devices (hover: none) keep the tap-to-open
+  // mobile pill (onClick below), so hover events are ignored there. Keyboard
+  // users navigate straight from the always-visible collapsed icon rail (each
+  // icon is a labelled link), so focus doesn't drive the expand.
+  const hoverCapable = useRef(false);
+  useEffect(() => {
+    hoverCapable.current = window.matchMedia("(hover: hover)").matches;
+  }, []);
+  const hoverOpen = () => {
+    if (hoverCapable.current) setOpen(true);
+  };
+  const hoverClose = () => {
+    if (hoverCapable.current) setOpen(false);
+  };
 
   // Close on Escape and on click outside.
   useEffect(() => {
@@ -187,6 +214,8 @@ export default function Navbar() {
     <nav
       ref={navRef}
       aria-label="Primary"
+      onMouseEnter={hoverOpen}
+      onMouseLeave={hoverClose}
       // ⚠️ The reveal hooks are HOME-ONLY, and that is load-bearing.
       // layout.tsx stamps `reveal-armed` on <html> before first paint, and
       // globals.css declares `.reveal-armed [data-reveal-soft] { opacity: 0 }`.
@@ -230,7 +259,7 @@ export default function Navbar() {
           data-menu-item
           className="absolute left-[28px] top-[30px] text-[31px] font-medium leading-none tracking-[-0.03em] underline decoration-from-font underline-offset-[6px] max-md:top-[28px]"
         >
-          menu
+          Menu
         </span>
 
         {/* Nav links — the left column. Desktop centres them in the frame; below
@@ -328,26 +357,54 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Bare toggle — transparent (no glass of its own), pinned to the pill's
-          spot (right + vertically centered) and always on top. It rides on the
-          glass surface, which supplies the pill look when closed and stays put
-          as the surface grows around it. */}
+      {/* Collapsed affordance — DESKTOP: a vertical icon rail (logo + one glyph
+          per nav link) so the pill reads as a navbar. Hovering/focusing the nav
+          expands it into the labelled panel above; the rail fades out as the
+          labels fade in (aria-hidden/tabIndex flip so only one set is active at a
+          time). The icons are real links, so you can also click straight through
+          to a page without expanding. */}
+      <div
+        aria-hidden={open}
+        className={`pointer-events-auto absolute right-[22px] top-1/2 z-10 hidden w-[80px] -translate-y-1/2 flex-col items-center justify-center gap-[22px] text-white transition-opacity duration-300 md:flex ${
+          open ? "pointer-events-none opacity-0" : "opacity-100"
+        }`}
+      >
+        {/* Width-only: the mark is 1.42:1, so `size-*` would letterbox it. The
+            logo links home (the conventional "home button"). */}
+        <Link href="/" aria-label="Home" tabIndex={open ? -1 : 0} className="mb-[2px]">
+          <BrandMark className="w-[34px]" />
+        </Link>
+        {LINKS.map((link) => {
+          const active = pathname === link.href;
+          return (
+            <Link
+              key={link.href}
+              href={link.href}
+              aria-label={link.label}
+              aria-current={active ? "page" : undefined}
+              title={link.label}
+              tabIndex={open ? -1 : 0}
+              className={`transition-opacity hover:opacity-100 ${
+                active ? "opacity-100" : "opacity-60"
+              }`}
+            >
+              <link.Icon className="size-[20px]" />
+            </Link>
+          );
+        })}
+      </div>
+
+      {/* MOBILE toggle — the original tap-to-open pill (logo LEFT, menu lines /
+          close RIGHT), pinned bottom-centre. Touch has no hover, so this stays
+          the way in on phones. Desktop hidden (the rail owns it). */}
       <button
         type="button"
         onClick={() => setOpen((o) => !o)}
         aria-expanded={open}
         aria-controls={panelId}
         aria-label={open ? "Close menu" : "Open menu"}
-        // Centred on the frame's right edge on desktop (vertical: logo over the
-        // menu-lines). Below md it becomes the horizontal bottom bar the glass
-        // grows out of — pinned to the frame's bottom-centre, 140×52, logo LEFT +
-        // lines/close RIGHT — and STAYS there while the panel expands above it
-        // (matching closedState's bottom-centre pill). max-md: only → desktop
-        // unchanged.
-        className="pointer-events-auto absolute right-[22px] top-1/2 z-10 flex h-[149px] w-[52px] -translate-y-1/2 flex-col items-center justify-between pb-[22px] pt-[18px] text-white max-md:left-1/2 max-md:right-auto max-md:top-auto max-md:bottom-0 max-md:h-[52px] max-md:w-[140px] max-md:-translate-x-1/2 max-md:translate-y-0 max-md:flex-row max-md:justify-between max-md:gap-0 max-md:px-[26px] max-md:py-0"
+        className="pointer-events-auto absolute bottom-0 left-1/2 z-10 flex h-[52px] w-[140px] -translate-x-1/2 flex-row items-center justify-between px-[26px] text-white md:hidden"
       >
-        {/* Width-only: the mark is 1.42:1, so `size-*` would letterbox it into a
-            square box and shrink it. w-[34px] renders 34×24. */}
         <BrandMark className="w-[34px]" />
         {open ? (
           <CloseIcon className="size-[13px]" />

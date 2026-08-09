@@ -16,7 +16,7 @@ export default function WhyUsPage() {
     <>
       <PageHeader
         title="Why Us"
-        sub="three things kiwikoru is built on — and an honest look at the alternatives."
+        sub="Three things KiwiKoru is built on — and an honest look at the alternatives."
       />
       {/* KiwiKoru's own "Why Choose Us" pillars (real copy). */}
       <WhyUsPillars />

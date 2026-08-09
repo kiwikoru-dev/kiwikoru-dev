@@ -76,11 +76,7 @@ export default function Pills() {
                 } as CSSProperties
               }
             >
-              <span
-                className={`whitespace-nowrap text-[20px] leading-[1.1] tracking-[-0.6px] text-white ${
-                  p.lower ? "lowercase" : ""
-                }`}
-              >
+              <span className="whitespace-nowrap text-[20px] leading-[1.1] tracking-[-0.6px] text-white">
                 {p.label}
               </span>
             </div>
@@ -94,7 +90,7 @@ export default function Pills() {
 
           {/* Primary CTA — the site's shared solid Button (white gradient +
               hover aura), exactly the surface this CTA node describes. */}
-          <Button variant="solid">see pricing</Button>
+          <Button variant="solid" href="#plans">See pricing</Button>
         </div>
       </div>
     </section>

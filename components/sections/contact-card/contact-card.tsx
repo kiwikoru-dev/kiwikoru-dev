@@ -31,7 +31,7 @@ export default function ContactCard() {
     >
       <RevealOnScroll selector="[data-contact-item]" />
       <div className="grid w-full max-w-[1146px] grid-cols-3 gap-[20px] max-md:grid-cols-1 max-md:gap-[16px]">
-        <GlassCard title="email" className="h-full" data-contact-item>
+        <GlassCard title="Email" className="h-full" data-contact-item>
           <a
             href={`mailto:${EMAIL}`}
             className="break-words text-white transition-opacity hover:opacity-70"
@@ -40,7 +40,7 @@ export default function ContactCard() {
           </a>
         </GlassCard>
 
-        <GlassCard title="phone" className="h-full" data-contact-item>
+        <GlassCard title="Phone" className="h-full" data-contact-item>
           <a
             href={`tel:${PHONE_E164}`}
             className="whitespace-nowrap text-white transition-opacity hover:opacity-70"
@@ -49,7 +49,7 @@ export default function ContactCard() {
           </a>
         </GlassCard>
 
-        <GlassCard title="office" className="h-full" data-contact-item>
+        <GlassCard title="Office" className="h-full" data-contact-item>
           <address className="not-italic">
             <span className="block tracking-[0.08em] text-white/70">
               KIWIKORU LIMITED

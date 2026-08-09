@@ -245,7 +245,10 @@ html[data-mode="night"] {
   --font-sans: var(--font-product-stack);
   --font-product: var(--font-product-stack);
   --font-mono: var(--font-geist-mono);
-  --font-instrument: var(--font-instrument-serif), ui-serif, Georgia, serif;
+  /* Serif accent retired — unified site-wide to Product Sans. Kept as an alias so
+     existing `font-instrument` callers resolve to the one site font (revert this
+     line to var(--font-instrument-serif)… to re-enable Instrument Serif). */
+  --font-instrument: var(--font-product-stack);
 }
 
 @media (prefers-color-scheme: dark) {

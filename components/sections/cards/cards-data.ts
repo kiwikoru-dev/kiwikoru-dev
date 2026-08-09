@@ -15,19 +15,19 @@
 // NOTE: the three object KEYS are structural — card-shell/cards.tsx and the
 // three *-media.tsx mockups key off them. Only the values are copy.
 export const CARD_COPY = {
-  subscribe: "book a review. we audit your accounts and hand back a costed migration plan.",
-  request: "we move you in waves. each workload gets a runbook, a window, and a rollback path.",
-  receive: "then we run it. 24/7 monitoring, monthly cost reviews, and patching you never think about.",
+  subscribe: "Book a review. We audit your accounts and hand back a costed migration plan.",
+  request: "We move you in waves. Each workload gets a runbook, a window, and a rollback path.",
+  receive: "Then we run it. 24/7 monitoring, monthly cost reviews, and patching you never think about.",
 } as const;
 
 /** The request board rows (Card2, Figma 140:13791). The first is the ACTIVE
  *  row — it expands and types out the brief — the rest are the queue below. */
-export const ACTIVE_REQUEST = { task: "migrate prod database", tag: "RDS" } as const;
+export const ACTIVE_REQUEST = { task: "Migrate prod database", tag: "RDS" } as const;
 export const REQUEST_QUEUE = [
-  { task: "set up landing zone", tag: "Infra" },
-  { task: "right-size ec2 fleet", tag: "Cost" },
-  { task: "terraform the vpc", tag: "IaC" },
-  { task: "wire up cloudwatch alarms", tag: "Ops" },
+  { task: "Set up landing zone", tag: "Infra" },
+  { task: "Right-size EC2 fleet", tag: "Cost" },
+  { task: "Terraform the VPC", tag: "IaC" },
+  { task: "Wire up CloudWatch alarms", tag: "Ops" },
 ] as const;
 
 export type ShotTile = {
@@ -60,8 +60,8 @@ export type ShotTile = {
  *  shot in CSS (the `pad`/`r`/`ri`/`blur` metrics below), so the design's glass
  *  border is back WITHOUT baking the sky into the pixels. */
 export const SHOT_TILES: ShotTile[] = [
-  { src: "/cards/shot-finance.png", alt: "Fintech dashboard concept", x: 0, y: 0, w: 295, h: 224, pad: 5.23, r: 11.5, ri: 7.12, blur: 2.09 },
-  { src: "/cards/shot-weightloss.png", alt: "Health app landing page", x: 1, y: 233, w: 294, h: 277, pad: 5.23, r: 11.5, ri: 6.54, blur: 2.09 },
-  { src: "/cards/shot-collage.png", alt: "Eyewear brand photography", x: 307, y: 49, w: 250, h: 234, pad: 5.39, r: 11.85, ri: 7.72, blur: 2.16 },
-  { src: "/cards/shot-taskma.png", alt: "Task manager web app", x: 306, y: 290, w: 288, h: 207, pad: 4.85, r: 10.66, ri: 3.49, blur: 1.94 },
+  { src: "/cards/shot-finance.png", alt: "Cloud data center", x: 0, y: 0, w: 295, h: 224, pad: 5.23, r: 11.5, ri: 7.12, blur: 2.09 },
+  { src: "/cards/shot-weightloss.png", alt: "Server rack cabling", x: 1, y: 233, w: 294, h: 277, pad: 5.23, r: 11.5, ri: 6.54, blur: 2.09 },
+  { src: "/cards/shot-collage.png", alt: "Server infrastructure", x: 307, y: 49, w: 250, h: 234, pad: 5.39, r: 11.85, ri: 7.72, blur: 2.16 },
+  { src: "/cards/shot-taskma.png", alt: "Storage servers", x: 306, y: 290, w: 288, h: 207, pad: 4.85, r: 10.66, ri: 3.49, blur: 1.94 },
 ];

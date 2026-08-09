@@ -63,7 +63,7 @@ export default function Portfolio() {
                 type="button"
                 onClick={() => setFilter(value)}
                 aria-pressed={isActive}
-                className={`rounded-full px-5 py-[7px] text-[14px] lowercase leading-none transition-colors duration-300 max-md:px-3.5 max-md:text-[13px] ${
+                className={`rounded-full px-5 py-[7px] text-[14px] leading-none transition-colors duration-300 max-md:px-3.5 max-md:text-[13px] ${
                   isActive
                     ? "bg-white/25 text-white"
                     : "text-white/60 hover:text-white/90"
@@ -76,10 +76,10 @@ export default function Portfolio() {
         </div>
 
         <h2 className="text-center text-display font-light leading-[1.1] tracking-[-0.03em] text-white [word-break:break-word]">
-          clouds we&apos;ve <span className="font-instrument">built</span>
+          Clouds we&apos;ve <span className="font-instrument">built</span>
         </h2>
-        <Button variant="solid" className="pointer-events-auto">
-          see all projects
+        <Button variant="solid" href="/about" className="pointer-events-auto">
+          See all projects
         </Button>
       </div>
 

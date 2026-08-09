@@ -25,7 +25,7 @@ export default function ContactPage() {
     <>
       <PageHeader
         title="Contact"
-        sub="tell us what you're running and where it hurts. we'll come back with a plan, not a sales deck."
+        sub="Tell us what you're running and where it hurts. We'll come back with a plan, not a sales deck."
       />
       <ContactCard />
       <FinalCta />

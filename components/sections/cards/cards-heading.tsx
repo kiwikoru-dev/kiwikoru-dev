@@ -84,7 +84,7 @@ export default function CardsHeading() {
       // row's old centre would float over the cards instead of above them.
       className="absolute left-1/2 top-[calc(50%_-_303px)] w-max -translate-x-1/2 -translate-y-1/2 whitespace-nowrap text-center font-product text-display font-light leading-[1.1] tracking-[-0.03em] text-white max-wide:static max-wide:left-auto max-wide:top-auto max-wide:w-full max-wide:translate-x-0 max-wide:translate-y-0 max-wide:whitespace-normal"
     >
-      {"on aws in "}
+      {"On AWS in "}
       <span className="font-instrument">weeks</span>
       {", not quarters"}
     </h2>

@@ -19,7 +19,7 @@ const CARD_H = 205; // expanded brief-card height
 
 // The typed brief (Figma 220:181).
 const BRIEF =
-  "hey, need a landing page for our seed round launch. brand's mostly done, i'll drop the figma. should feel fast and a bit premium, think linear not corporate. hero, social proof, pricing, faq. can we get a first look by fri";
+  "Hey, need a landing page for our seed round launch. Brand's mostly done, I'll drop the Figma. Should feel fast and a bit premium, think linear not corporate. Hero, social proof, pricing, FAQ. Can we get a first look by Fri";
 
 // Same gold→green aura as the subscribe/receive pills (get_design_context
 // flattens it to a flat #ffe8b7). The siri-style rainbow from demo.html, driven

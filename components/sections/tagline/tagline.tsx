@@ -43,7 +43,7 @@ import TaglineReveal from "./tagline-reveal";
 //   "just works."  4.71em -> 122vw           (would be cut off)
 // Measure against app/fonts/ProductSans-Bold.woff2, not by eye.
 const LINES: readonly { text: string; breakBefore?: number }[] = [
-  { text: "cloud that", breakBefore: 6 }, // break before the "t" of "that"
+  { text: "Cloud that", breakBefore: 6 }, // break before the "t" of "that"
   { text: "sits still." },
 ];
 

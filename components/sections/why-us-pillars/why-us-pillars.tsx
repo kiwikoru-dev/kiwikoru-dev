@@ -17,16 +17,16 @@ import RevealOnScroll from "@/components/ui/reveal-on-scroll";
  */
 const PILLARS = [
   {
-    name: "passionate",
-    body: "cloud technology isn't just our job, it's our obsession. we treat your infrastructure with fierce dedication, sweating the small details so you never have to — from the first line of code to the final migration.",
+    name: "Passionate",
+    body: "Cloud technology isn't just our job, it's our obsession. We treat your infrastructure with fierce dedication, sweating the small details so you never have to — from the first line of code to the final migration.",
   },
   {
-    name: "professional",
-    body: "enterprise-grade aws solutions tailored to your business. our certified experts keep your cloud secure, scalable and optimised for peak performance, so you can focus on innovation while we handle the technical complexity.",
+    name: "Professional",
+    body: "Enterprise-grade AWS solutions tailored to your business. Our certified experts keep your cloud secure, scalable and optimised for peak performance, so you can focus on innovation while we handle the technical complexity.",
   },
   {
     name: "24/7 monitoring",
-    body: "our monitoring detects issues before they reach your business — maximum uptime, robust security, and performance kept in tune around the clock.",
+    body: "Our monitoring detects issues before they reach your business — maximum uptime, robust security, and performance kept in tune around the clock.",
   },
 ] as const;
 

@@ -14,7 +14,7 @@ export default function HeroText() {
         data-reveal-order={3}
         className="w-[775px] max-w-full text-hero font-light leading-[1.1] tracking-[-0.03em]"
       >
-        aws migration and managed services, without the{" "}
+        AWS migration and managed services, without the{" "}
         <span className="font-instrument tracking-[-0.5px]">guesswork</span>
       </h1>
 
@@ -24,7 +24,7 @@ export default function HeroText() {
         data-reveal-order={4}
         className="w-[567px] max-w-full text-body leading-normal tracking-[0.02em]"
       >
-        cut cloud costs and lift performance with expert aws consulting,
+        Cut cloud costs and lift performance with expert AWS consulting,
         migration strategy, and 24/7 system management.
       </p>
 
@@ -38,8 +38,8 @@ export default function HeroText() {
           data-reveal-order={5}
           className="inline-flex max-md:w-full"
         >
-          <Button variant="solid" href="#plans" className="max-md:w-full">
-            explore services
+          <Button variant="solid" href="/services" className="max-md:w-full">
+            Explore services
           </Button>
         </span>
         <span
@@ -47,8 +47,8 @@ export default function HeroText() {
           data-reveal-order={5}
           className="inline-flex max-md:w-full"
         >
-          <Button variant="clear" href="#book" className="max-md:w-full">
-            book a 15-min cloud review
+          <Button variant="clear" href="/contact" className="max-md:w-full">
+            Book a 15-min cloud review
           </Button>
         </span>
       </div>

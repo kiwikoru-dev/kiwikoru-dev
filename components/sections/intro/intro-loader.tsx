@@ -3,7 +3,7 @@
 import type { CSSProperties } from "react";
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
-import BrandMark from "@/components/ui/brand-mark";
+import IntroBrandMark from "./intro-brand-mark";
 // Wordmark temporarily disabled in the loader column (see commented block below).
 // import Wordmark from "@/components/ui/wordmark";
 import {
@@ -180,13 +180,15 @@ export default function IntroLoader() {
           hairline progress, stacked with a 50px gap and centre-aligned. */}
       <div className="flex flex-col items-center gap-[50px]">
         {/* Brand mark — masked reveal: rises from behind its own clip line.
-            Width-driven: the mark is 1.42:1, so height follows (204×143). */}
+            Width-driven: the mark is 1.42:1, so height follows (204×143). The
+            intro uses the ORANGE gradient variant (IntroBrandMark) rather than
+            the flat-white shared <BrandMark/> the nav pill uses. */}
         <div className="loader-reveal">
           <div
             className="loader-rise"
             style={{ "--rise-delay": "0.2s" } as CSSProperties}
           >
-            <BrandMark className="block w-[204px] text-white" />
+            <IntroBrandMark className="block w-[204px]" />
           </div>
         </div>
         {/* Wordmark — masked reveal, staggered a beat behind the logo. */}

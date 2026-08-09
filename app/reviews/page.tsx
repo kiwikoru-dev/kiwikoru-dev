@@ -26,7 +26,7 @@ export default function ReviewsPage() {
     <>
       <PageHeader
         title="Reviews"
-        sub="what it's like on the other side of a migration."
+        sub="What it's like on the other side of a migration."
       />
       <Testimonials />
     </>

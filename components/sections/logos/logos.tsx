@@ -46,7 +46,7 @@ export default function Logos() {
         data-reveal-order={6}
         className="whitespace-nowrap text-[16px] tracking-[-0.32px]"
       >
-        certified across the{" "}
+        Certified across the{" "}
         <span className="font-instrument text-[25px] tracking-[-0.5px]">
           services
         </span>{" "}

@@ -18,33 +18,33 @@ export type Faq = {
 // verify each with the client before publishing.
 export const FAQS: readonly Faq[] = [
   {
-    question: "how long does a migration take?",
+    question: "How long does a migration take?",
     answer:
-      "most lift-and-shift moves land in two to six weeks depending on how much data follows you. you get a plan with dates and a rollback path before anything moves.",
+      "Most lift-and-shift moves land in two to six weeks depending on how much data follows you. You get a plan with dates and a rollback path before anything moves.",
   },
   {
-    question: "will you actually cut our aws bill?",
+    question: "Will you actually cut our AWS bill?",
     answer:
-      "usually, and materially. right-sizing, reserved capacity and killing idle resources are the first pass — we review spend monthly and show you the delta, not just a dashboard.",
+      "Usually, and materially. Right-sizing, reserved capacity and killing idle resources are the first pass — we review spend monthly and show you the delta, not just a dashboard.",
   },
   {
-    question: "what happens when something breaks at 3am?",
+    question: "What happens when something breaks at 3 a.m.?",
     answer:
-      "monitoring is 24/7 and so are we. alerts page a real engineer who knows your stack, and you get an incident write-up afterwards rather than a closed ticket.",
+      "Monitoring is 24/7 and so are we. Alerts page a real engineer who knows your stack, and you get an incident write-up afterwards rather than a closed ticket.",
   },
   {
-    question: "do we have to move everything at once?",
+    question: "Do we have to move everything at once?",
     answer:
-      "no. most clients run hybrid for a while — we migrate in waves, keep both sides talking, and only cut over when the new environment has proven itself.",
+      "No. Most clients run hybrid for a while — we migrate in waves, keep both sides talking, and only cut over when the new environment has proven itself.",
   },
   {
-    question: "who actually does the work?",
+    question: "Who actually does the work?",
     answer:
-      "aws certified engineers, the same ones each time. no offshore handoff, no rotating bench, no junior learning on your production account.",
+      "AWS certified engineers, the same ones each time. No offshore handoff, no rotating bench, no junior learning on your production account.",
   },
   {
-    question: "are we locked in?",
+    question: "Are we locked in?",
     answer:
-      "no. managed services run month to month, and everything we build is plain aws with terraform you own. if you leave, your infrastructure leaves with you.",
+      "No. Managed services run month to month, and everything we build is plain AWS with Terraform you own. If you leave, your infrastructure leaves with you.",
   },
 ];

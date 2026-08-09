@@ -62,17 +62,17 @@ export default function Cards() {
             media-gate.ts's CardMediaId union and the three *-media.tsx mockups,
             not copy. Renaming them is a separate refactor; don't half-do it. */}
         <div data-card-scale className="shrink-0">
-          <CardShell title="assess" subtitle={CARD_COPY.subscribe}>
+          <CardShell title="Assess" subtitle={CARD_COPY.subscribe}>
             <SubscribeMedia />
           </CardShell>
         </div>
         <div data-card-scale className="shrink-0">
-          <CardShell title="migrate" subtitle={CARD_COPY.request}>
+          <CardShell title="Migrate" subtitle={CARD_COPY.request}>
             <RequestMedia />
           </CardShell>
         </div>
         <div data-card-scale className="shrink-0">
-          <CardShell title="manage" subtitle={CARD_COPY.receive}>
+          <CardShell title="Manage" subtitle={CARD_COPY.receive}>
             <ReceiveMedia />
           </CardShell>
         </div>

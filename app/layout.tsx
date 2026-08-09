@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist_Mono, Instrument_Serif } from "next/font/google";
+import { Geist_Mono } from "next/font/google";
 import localFont from "next/font/local";
 import Script from "next/script";
 import "./globals.css";
@@ -20,14 +20,6 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// Instrument Serif — used for the italic-feel "guesswork" accent in the hero headline.
-const instrumentSerif = Instrument_Serif({
-  weight: "400",
-  variable: "--font-instrument-serif",
-  subsets: ["latin"],
-  display: "swap",
-});
-
 // Product Sans (proprietary) — self-hosted from app/fonts/. Exposes
 // --font-product-sans, consumed by --font-product in globals.css.
 const productSans = localFont({
@@ -42,7 +34,7 @@ const productSans = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "kiwikoru — aws migration and managed services",
+  title: "kiwikoru — AWS migration and managed services",
   description:
     "KiwiKoru is an AWS consulting partner. We cut cloud costs and lift performance through expert migration, infrastructure management, and 24/7 monitoring.",
 };
@@ -56,7 +48,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${geistMono.variable} ${productSans.variable} ${instrumentSerif.variable} h-full antialiased`}
+      className={`${geistMono.variable} ${productSans.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col" suppressHydrationWarning>
         {/* Warm the WebGL intro's Text3D font during HTML parse so it isn't a

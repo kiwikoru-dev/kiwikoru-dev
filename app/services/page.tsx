@@ -24,7 +24,7 @@ export default function ServicesPage() {
     <>
       <PageHeader
         title="Services"
-        sub="six things we do on aws — from the first architecture call through to the 3am page nobody wants."
+        sub="Six things we do on AWS — from the first architecture call through to the 3 a.m. page nobody wants."
       />
       {/* KiwiKoru's own six service descriptions (real copy). */}
       <ServiceList />

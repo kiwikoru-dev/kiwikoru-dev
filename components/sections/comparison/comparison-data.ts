@@ -13,11 +13,11 @@
 
 /** Column headers, in render order. `kiwikoru` is the featured (highlighted) one. */
 export const COMPARISON_COLUMNS = [
-  "kiwikoru",
-  "in-house team",
-  "big consultancy",
-  "freelance devops",
-  "managed hosting",
+  "KiwiKoru",
+  "In-house team",
+  "Big consultancy",
+  "Freelance DevOps",
+  "Managed hosting",
 ] as const;
 
 export type ComparisonCell = "check" | "dash" | (string & {});
@@ -41,27 +41,27 @@ export interface ComparisonRow {
 // confirm each claim before this ships.
 export const COMPARISON_ROWS: readonly ComparisonRow[] = [
   {
-    label: "time to first migration",
-    cells: ["check", "months to hire", "weeks of scoping", "check", "n/a"],
+    label: "Time to first migration",
+    cells: ["check", "Months to hire", "Weeks of scoping", "check", "N/A"],
   },
   {
-    label: "aws certified engineers",
-    cells: ["check", "varies", "check", "lottery", "dash"],
+    label: "AWS certified engineers",
+    cells: ["check", "Varies", "check", "Lottery", "dash"],
   },
   {
     label: "24/7 monitoring included",
-    cells: ["check", "on-call rota", "extra retainer", "dash", "check"],
+    cells: ["check", "On-call rota", "Extra retainer", "dash", "check"],
   },
   {
-    label: "actively cuts your bill",
-    cells: ["check", "check", "dash", "sometimes", "dash"],
+    label: "Actively cuts your bill",
+    cells: ["check", "check", "dash", "Sometimes", "dash"],
   },
   {
-    label: "one team that knows your stack",
-    cells: ["check", "check", "rotating", "solo", "ticket queue"],
+    label: "One team that knows your stack",
+    cells: ["check", "check", "Rotating", "Solo", "Ticket queue"],
   },
   {
-    label: "predictable cost",
-    cells: ["check", "salary + benefits", "scope creep", "hourly drift", "check"],
+    label: "Predictable cost",
+    cells: ["check", "Salary + benefits", "Scope creep", "Hourly drift", "check"],
   },
 ];

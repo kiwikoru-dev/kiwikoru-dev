@@ -24,7 +24,7 @@ export default function AboutStory() {
           data-about-block
           className="text-display font-light leading-[1.1] tracking-[-0.03em] text-white"
         >
-          we help teams build the business of their{" "}
+          We help teams build the business of their{" "}
           <span className="font-instrument">dreams</span>
         </h2>
 
@@ -32,7 +32,7 @@ export default function AboutStory() {
           data-about-block
           className="max-w-[720px] text-body-lg font-light leading-normal tracking-[0.02em] text-white/70"
         >
-          your vision deserves a solid foundation. kiwikoru provides the expert
+          Your vision deserves a solid foundation. KiwiKoru provides the expert
           guidance and managed services to turn operational challenges into
           growth opportunities — optimising your digital environment so you
           reduce overhead, increase speed, and build a business that stands up

@@ -28,6 +28,7 @@ import { FIXED_SPRINT, SUBSCRIPTION, type Plan } from "./pricing-data";
 export default function Pricing() {
   return (
     <section
+      id="plans"
       data-pricing
       // Desktop content-driven (no min-h-dvh) with 25dvh viewport-proportional
       // padding — matches the full-screen tagline/cards breathing room, so the
@@ -47,7 +48,7 @@ export default function Pricing() {
             data-pricing-head
             className="text-display font-light leading-[1.1] tracking-[-0.03em]"
           >
-            <span>simple pricing, </span>
+            <span>Simple pricing, </span>
             <span className="font-instrument">scale</span>
             <span> anytime</span>
           </h2>
@@ -55,7 +56,7 @@ export default function Pricing() {
             data-pricing-sub
             className="text-body leading-normal tracking-[0.02em]"
           >
-            two ways to work with us. same certified engineers either way.
+            Two ways to work with us. Same certified engineers either way.
           </p>
         </div>
 
@@ -73,6 +74,7 @@ export default function Pricing() {
             data-pricing-card
             plan={SUBSCRIPTION}
             cta="start managed services"
+            ctaHref="/contact"
             ctaVariant="solid"
             className="left-0 top-[79px] max-xl:mb-[40px]"
             // ⚠️ PLACEHOLDER PRICE. The design shipped a real number ($5,995/mo)
@@ -109,6 +111,7 @@ export default function Pricing() {
             data-pricing-card
             plan={FIXED_SPRINT}
             cta="book a 15-min cloud review"
+            ctaHref="/contact"
             ctaVariant="clear"
             className="left-[591px] top-[169.54px]"
             columnPadY="py-[48px]"
@@ -147,7 +150,7 @@ export default function Pricing() {
 
         {/* Custom-scope catch-all — for work that fits neither plan (node
             546:655). 615px, centred; "book a call" is the underlined link,
-            pointing at the same #book target the navbar CTA uses. */}
+            pointing at /contact (the booking route until Cal.com is wired). */}
         <p
           data-pricing-foot
           className="w-[615px] max-w-full text-center text-body-lg font-light leading-[normal] text-white"
@@ -155,7 +158,7 @@ export default function Pricing() {
           got something that doesn&apos;t fit either of these? tell us what
           you&apos;re building and we&apos;ll scope it to you.{" "}
           <a
-            href="#book"
+            href="/contact"
             className="font-medium underline decoration-solid [text-underline-position:from-font] transition-opacity hover:opacity-80"
           >
             book a call
@@ -192,6 +195,7 @@ function PlanCard({
   priceNote,
   priceNoteClassName,
   cta,
+  ctaHref,
   ctaVariant,
   className,
   columnPadY = "py-[42.5px]",
@@ -202,6 +206,7 @@ function PlanCard({
   priceNote: string;
   priceNoteClassName?: string;
   cta: string;
+  ctaHref: string;
   ctaVariant: ButtonVariant;
   className?: string;
   /** Column top/bottom padding — differs per plan to match each Figma card. */
@@ -228,7 +233,7 @@ function PlanCard({
           </p>
         </div>
 
-        <Button variant={ctaVariant}>{cta}</Button>
+        <Button variant={ctaVariant} href={ctaHref}>{cta}</Button>
 
         <div aria-hidden className="h-px w-full bg-white/20" />
 

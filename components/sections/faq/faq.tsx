@@ -74,7 +74,7 @@ export default function Faq() {
           data-faq-head
           className="w-full text-center text-display leading-[1.1] tracking-[-0.03em] text-white"
         >
-          <span className="font-light">cloud questions, answered </span>
+          <span className="font-light">Cloud questions, answered </span>
           <span className="font-instrument">straight</span>
         </h2>
 

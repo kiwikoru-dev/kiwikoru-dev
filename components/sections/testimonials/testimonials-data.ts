@@ -180,7 +180,7 @@ export const TESTIMONIALS: Testimonial[] = [
   {
     id: "bill-halved",
     quote: [
-      { text: "“they halved our aws bill in the first quarter, and we " },
+      { text: "“They halved our AWS bill in the first quarter, and we " },
       { text: "didn’t lose a thing", serif: true },
       { text: ".”" },
     ],
@@ -188,15 +188,15 @@ export const TESTIMONIALS: Testimonial[] = [
   {
     id: "migration-boring",
     quote: [
-      { text: "“the migration was the most " },
+      { text: "“The migration was the most " },
       { text: "boring weekend", serif: true },
-      { text: " of my career. that’s the highest praise i have.”" },
+      { text: " of my career. That’s the highest praise I have.”" },
     ],
   },
   {
     id: "stopped-firefighting",
     quote: [
-      { text: "“we stopped firefighting at 2am. the alerts still happen, they’re just " },
+      { text: "“We stopped firefighting at 2 a.m. The alerts still happen, they’re just " },
       { text: "someone else’s problem now", serif: true },
       { text: ".”" },
     ],
@@ -204,7 +204,7 @@ export const TESTIMONIALS: Testimonial[] = [
   {
     id: "knew-our-stack",
     quote: [
-      { text: "“the same two engineers every time. by month three they " },
+      { text: "“The same two engineers every time. By month three they " },
       { text: "knew our stack", serif: true },
       { text: " better than we did.”" },
     ],
@@ -212,7 +212,7 @@ export const TESTIMONIALS: Testimonial[] = [
   {
     id: "audit-passed",
     quote: [
-      { text: "“we passed our first security audit " },
+      { text: "“We passed our first security audit " },
       { text: "without a single finding", serif: true },
       { text: ".”" },
     ],
@@ -220,7 +220,7 @@ export const TESTIMONIALS: Testimonial[] = [
   {
     id: "no-lock-in",
     quote: [
-      { text: "“everything came with terraform we own. no black box, " },
+      { text: "“Everything came with Terraform we own. No black box, " },
       { text: "no hostage situation", serif: true },
       { text: ".”" },
     ],
@@ -228,15 +228,15 @@ export const TESTIMONIALS: Testimonial[] = [
   {
     id: "scaled-black-friday",
     quote: [
-      { text: "“black friday tripled our traffic and the infrastructure " },
+      { text: "“Black Friday tripled our traffic and the infrastructure " },
       { text: "just absorbed it", serif: true },
-      { text: ". nobody even messaged me.”" },
+      { text: ". Nobody even messaged me.”" },
     ],
   },
   {
     id: "plan-first",
     quote: [
-      { text: "“they turned up with a costed plan, not a " },
+      { text: "“They turned up with a costed plan, not a " },
       { text: "sales deck", serif: true },
       { text: ".”" },
     ],

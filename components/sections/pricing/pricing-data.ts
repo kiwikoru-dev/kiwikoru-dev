@@ -18,26 +18,26 @@ export type Plan = {
 // the services the site does advertise. Confirm the inclusions (and add real
 // numbers) before this goes live.
 export const SUBSCRIPTION: Plan = {
-  title: "managed services",
+  title: "Managed services",
   description:
-    "your ongoing aws team. monitoring, patching, and cost control, handled month to month.",
+    "Your ongoing AWS team. Monitoring, patching, and cost control, handled month to month.",
   features: [
     "24/7 monitoring and incident response",
-    "patching, backups, and dr drills",
-    "monthly cost-optimisation review",
-    "aws governance and guardrails",
-    "no lock-in, cancel anytime",
+    "Patching, backups, and DR drills",
+    "Monthly cost-optimisation review",
+    "AWS governance and guardrails",
+    "No lock-in, cancel anytime",
   ],
 };
 
 export const FIXED_SPRINT: Plan = {
-  title: "migration sprint",
+  title: "Migration sprint",
   description:
-    "a defined move to aws in a set window. for lift-and-shift and re-platforming.",
+    "A defined move to AWS in a set window. For lift-and-shift and re-platforming.",
   features: [
-    "discovery and landing zone",
-    "migration plan with rollback",
-    "same certified engineers",
+    "Discovery and landing zone",
+    "Migration plan with rollback",
+    "Same certified engineers",
     "50/50 payment split",
   ],
 };

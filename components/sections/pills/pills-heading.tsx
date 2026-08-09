@@ -92,7 +92,7 @@ export default function PillsHeading() {
       className="relative h-[164px] w-full whitespace-nowrap text-center text-white max-md:flex max-md:h-auto max-md:flex-col max-md:items-center max-md:whitespace-normal"
     >
       <p className="absolute left-[calc(50%-155.5px)] top-0 -translate-x-1/2 font-instrument text-display leading-[1.1] tracking-[-0.03em] max-md:static max-md:translate-x-0">
-        everything
+        Everything
       </p>
       <p className="absolute left-[calc(50%+36.5px)] top-[50px] -translate-x-1/2 text-hero font-bold leading-[1.1] tracking-[-0.03em] max-md:static max-md:translate-x-0">
         that gets you up

@@ -99,16 +99,16 @@ export default function Comparison() {
             className="text-display leading-[1.1] tracking-[-0.03em]"
           >
             <span className="block whitespace-nowrap font-light max-lg:whitespace-normal">
-              hire, outsource, or wing it?
+              Hire, outsource, or wing it?
             </span>
-            <span className="block font-instrument">none of the above.</span>
+            <span className="block font-instrument">None of the above.</span>
           </h2>
           <p
             data-comparison-sub
             className="w-[567px] max-w-full text-body leading-normal tracking-[0.02em] max-lg:w-full"
           >
-            hiring a cloud engineer takes months. consultancies scope for a
-            quarter. hosting support closes your ticket. there&rsquo;s a fourth
+            Hiring a cloud engineer takes months. Consultancies scope for a
+            quarter. Hosting support closes your ticket. There&rsquo;s a fourth
             option.
           </p>
         </div>

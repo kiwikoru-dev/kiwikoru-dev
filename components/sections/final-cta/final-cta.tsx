@@ -59,7 +59,7 @@ export default function FinalCta() {
           data-final-cta-head
           className="whitespace-nowrap text-center text-display leading-[1.1] tracking-[-0.03em] text-white max-md:w-full max-md:whitespace-normal"
         >
-          <span className="font-light">let&rsquo;s get you onto the </span>
+          <span className="font-light">Let&rsquo;s get you onto the </span>
           <span className="font-instrument">cloud</span>
         </h2>
 
@@ -69,11 +69,11 @@ export default function FinalCta() {
           data-final-cta-actions
           className="flex items-center gap-[16px] max-md:w-full max-md:max-w-[360px] max-md:flex-col max-md:gap-[12px]"
         >
-          <Button variant="solid" className="max-md:w-full">
-            see our services
+          <Button variant="solid" href="/services" className="max-md:w-full">
+            See our services
           </Button>
-          <Button variant="clear" className="max-md:w-full">
-            book a 15-min cloud review
+          <Button variant="clear" href="/contact" className="max-md:w-full">
+            Book a 15-min cloud review
           </Button>
         </div>
       </div>

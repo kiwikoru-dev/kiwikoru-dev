@@ -57,7 +57,7 @@ export default function WorkingWith() {
           className="whitespace-nowrap text-display font-light leading-[1.1] tracking-[-0.03em] max-md:whitespace-normal"
         >
           <span data-ww-word className="inline-block">
-            who
+            Who
           </span>{" "}
           <span data-ww-word className="inline-block">
             you&rsquo;re
@@ -79,11 +79,11 @@ export default function WorkingWith() {
             deliberately claims nothing about company age, headcount, or client
             count that hasn't been confirmed. Replace with the real story. */}
         <p data-ww-para className="text-[25px] leading-[1.1] max-md:text-[19px] max-md:leading-[1.25]">
-          no offshore handoff, no rotating bench. the same certified engineers
+          No offshore handoff, no rotating bench. The same certified engineers
           on your account,{" "}
           <span data-ww-fill className="text-white/60">
-            a small aws practice that would rather cut your bill than grow your
-            invoice. we look after the boring parts of your cloud &mdash; the
+            a small AWS practice that would rather cut your bill than grow your
+            invoice. We look after the boring parts of your cloud &mdash; the
             patching, the alerts, the spend &mdash; so you can get back to the
             product.
           </span>
