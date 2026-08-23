@@ -118,9 +118,13 @@ function buildScrollTimelineCss(): string {
 
 export default function StaticCloudLayer({
   reveal,
+  isHome,
 }: {
   /** Intro fade/settle style from cloud-layer.tsx — applied per layer. */
   reveal: React.CSSProperties;
+  /** Home route (`/`)? The FRONT stratum (over the rock bases) belongs to the
+   *  hero cliffs, which only `/` renders — see the gate in cloud-layer.tsx. */
+  isHome: boolean;
 }) {
   const mode = useMode();
   const imgRefs = useRef<Map<string, HTMLImageElement>>(new Map());
@@ -309,16 +313,20 @@ export default function StaticCloudLayer({
     ));
 
   // Same stacking as the live canvases (cloud-layer.tsx): sky behind the page
-  // content, front above the rock bases / intro canvas.
+  // content, front above the rock bases / intro canvas. The FRONT stratum is
+  // HOME ONLY — it belongs to the hero cliffs, absent on inner routes, where it
+  // would only rise into the content (mirrors the WebGL gate in cloud-layer.tsx).
   return (
     <>
       {compositor && <style>{css}</style>}
       <div aria-hidden style={reveal} className="pointer-events-none fixed inset-0 -z-10">
         {renderClouds("sky")}
       </div>
-      <div aria-hidden style={reveal} className="pointer-events-none fixed inset-0 z-[61]">
-        {renderClouds("front")}
-      </div>
+      {isHome && (
+        <div aria-hidden style={reveal} className="pointer-events-none fixed inset-0 z-[61]">
+          {renderClouds("front")}
+        </div>
+      )}
     </>
   );
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import {
   INTRO_REVEAL_EVENT,
@@ -99,6 +100,13 @@ const noopSubscribe = () => () => {};
 export default function CloudLayer() {
   const eligible = useCanvasEligible();
   const revealed = useIntroReveal();
+  // The FRONT cloud plane (ROCK_CLOUDS) exists ONLY to skirt the home hero's
+  // cliff feet — it's welded to scroll and rests at the viewport bottom, so on
+  // routes with no hero (a short <PageHeader> instead) it rises straight into the
+  // content and paints over the cards (z 61). Those routes never render a hero or
+  // (benched) footer, so the front plane has nothing to do there but obscure
+  // content. Gate it to `/`; the REAR sky clouds (behind content) stay everywhere.
+  const isHome = usePathname() === "/";
   const skyTrackRef = useRef<HTMLDivElement>(null);
   const rockTrackRef = useRef<HTMLDivElement>(null);
   // False for SSR + the hydration render, true right after. The static fallback
@@ -131,7 +139,7 @@ export default function CloudLayer() {
   // no-WebGL): individual baked cloud sprites distributed across every section
   // and scroll-driven in DOM (GSAP transforms) — see static-cloud-layer.tsx.
   if (!eligible) {
-    return <StaticCloudLayer reveal={reveal} />;
+    return <StaticCloudLayer reveal={reveal} isHome={isHome} />;
   }
 
   return (
@@ -155,20 +163,25 @@ export default function CloudLayer() {
           skirt overlaps them. A thin band pinned to the very bottom (ROCK_CLOUDS
           ndc y ≈ -1.02), so leapfrogging the top-anchored wordmark (z-10)/content
           is spatially harmless. scrollFactor MUST stay 1: these are welded to the
-          cliff feet (page content scrolling 1:1); any damping slides them off. */}
-      <div
-        ref={rockTrackRef}
-        aria-hidden
-        className="pointer-events-none fixed inset-0"
-      >
-        <CloudView
-          plane="front"
-          index={FRONT_INDEX.ROCK_CLOUDS}
-          track={rockTrackRef}
-          clouds={ROCK_CLOUDS}
-          scrollFactor={1}
-        />
-      </div>
+          cliff feet (page content scrolling 1:1); any damping slides them off.
+          HOME ONLY: the cliffs live on `/` alone. On hero-less inner routes this
+          bottom-anchored, scroll-welded band rises into the content and paints over
+          the cards (see the `isHome` note above), so the plane isn't mounted there. */}
+      {isHome && (
+        <div
+          ref={rockTrackRef}
+          aria-hidden
+          className="pointer-events-none fixed inset-0"
+        >
+          <CloudView
+            plane="front"
+            index={FRONT_INDEX.ROCK_CLOUDS}
+            track={rockTrackRef}
+            clouds={ROCK_CLOUDS}
+            scrollFactor={1}
+          />
+        </div>
+      )}
     </>
   );
 }
