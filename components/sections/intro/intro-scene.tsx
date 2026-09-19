@@ -171,7 +171,7 @@ export type IntroSceneProps = {
   onReady?: () => void;
 };
 
-const FONT = "/fonts/product-sans-medium.v3.typeface.json";
+const FONT = "/fonts/product-sans-medium.v4.typeface.json";
 
 // Camera + rock depth, exported so <Intro> can compensate its DOM→world rock
 // placement: the planes sit slightly BEHIND the glass (so it refracts them), and

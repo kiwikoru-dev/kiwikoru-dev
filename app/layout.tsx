@@ -61,7 +61,7 @@ export default function RootLayout({
             this preload request. */}
         <link
           rel="preload"
-          href="/fonts/product-sans-medium.v3.typeface.json"
+          href="/fonts/product-sans-medium.v4.typeface.json"
           as="fetch"
           crossOrigin="anonymous"
         />

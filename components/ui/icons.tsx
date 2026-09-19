@@ -109,6 +109,19 @@ export function MailIcon(props: SVGProps<SVGSVGElement>) {
   );
 }
 
+/** Case Studies — a written document (lucide file-text shape). */
+export function CaseStudiesIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg" {...props}>
+      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+      <path d="M14 2v6h6" />
+      <path d="M16 13H8" />
+      <path d="M16 17H8" />
+      <path d="M10 9H8" />
+    </svg>
+  );
+}
+
 /** Check / tick used on the cards' "delivered" and "board ready" pills
  *  (receive-media + subscribe-media, Figma 124:254). Stroked with
  *  currentColor so the consumer sets its ink (both use the dark #263138). */

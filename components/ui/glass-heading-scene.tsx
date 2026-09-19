@@ -37,7 +37,7 @@ import { makeSkyBackdrop } from "@/lib/theme/sky-backdrop";
  * a feature the user is looking at.
  */
 
-const FONT = "/fonts/product-sans-medium.v3.typeface.json";
+const FONT = "/fonts/product-sans-medium.v4.typeface.json";
 
 const CAMERA_Z = 5.4;
 
@@ -168,9 +168,14 @@ function ResizeBurst({ burstRef }: { burstRef: React.RefObject<number> }) {
 function GlassWord({
   text,
   background,
+  widthPerSize,
 }: {
   text: string;
   background: THREE.Texture;
+  /** Divisor for the width-based size — the widest string this heading must
+   *  fit. Defaults to the nav pages' worst case; longer headings (the case
+   *  studies) pass their own so they don't overflow or shrink the other pages. */
+  widthPerSize: number;
 }) {
   // Snapshot the tier ONCE at mount (see the header note): a watchdog
   // step-down mid-session must not re-tessellate or re-FBO a heading the user
@@ -182,7 +187,7 @@ function GlassWord({
   // height rule only clamps a short stage. See the constants above.
   const viewport = useThree((s) => s.viewport);
   const size = Math.min(
-    (viewport.width * WIDTH_SAFE_FRAC) / WIDEST_PER_SIZE,
+    (viewport.width * WIDTH_SAFE_FRAC) / widthPerSize,
     viewport.height * HEIGHT_FRAC,
   );
 
@@ -231,7 +236,15 @@ function GlassWord({
   );
 }
 
-export default function GlassHeadingScene({ text }: { text: string }) {
+export default function GlassHeadingScene({
+  text,
+  widthPerSize = WIDEST_PER_SIZE,
+}: {
+  text: string;
+  /** Override the size divisor (see GlassWord). Defaults to the nav-page
+   *  worst case ("services"); the case-study pages pass a larger value. */
+  widthPerSize?: number;
+}) {
   const burstRef = useRef(BURST * 2);
   const mode = useMode();
 
@@ -256,7 +269,7 @@ export default function GlassHeadingScene({ text }: { text: string }) {
       style={{ position: "absolute", inset: 0, pointerEvents: "none" }}
     >
       <Suspense fallback={null}>
-        <GlassWord text={text} background={sky.texture} />
+        <GlassWord text={text} background={sky.texture} widthPerSize={widthPerSize} />
         {/* The exact studio glints the intro / footer / lab glass use — without
             these the bevel silhouette picks up dark directions and the glyph
             outline goes muddy. */}

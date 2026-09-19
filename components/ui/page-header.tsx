@@ -96,9 +96,14 @@ function HeadingPill({ title }: { title: string }) {
 export default function PageHeader({
   title,
   sub,
+  widthPerSize,
 }: {
   title: string;
   sub: string;
+  /** Optional size-divisor override for the glass heading — the widest string
+   *  it must fit. The nav pages omit it (defaults to the "services" worst case);
+   *  the longer case-study headings pass their own so they don't overflow. */
+  widthPerSize?: number;
 }) {
   const glass = useGlassEligible();
 
@@ -112,7 +117,7 @@ export default function PageHeader({
           // assistive tech and search; only the pixels come from GL.
           <div className={`relative ${STAGE} ${STAGE_W}`}>
             <h1 className="sr-only">{title}</h1>
-            <GlassHeadingScene text={title} />
+            <GlassHeadingScene text={title} widthPerSize={widthPerSize} />
           </div>
         ) : (
           <HeadingPill title={title} />

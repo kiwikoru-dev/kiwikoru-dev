@@ -7,6 +7,7 @@ import gsap from "gsap";
 import { setMode } from "@/lib/theme/mode-store";
 import { useMode } from "@/lib/theme/use-mode";
 import {
+  CaseStudiesIcon,
   CloseIcon,
   FacebookSocial,
   HomeIcon,
@@ -25,14 +26,15 @@ import { MODE_ITEMS } from "./mode-switcher";
 
 type NavLink = { label: string; href: string; Icon: typeof HomeIcon };
 
-// Mirrors the live kiwikoru.com menu (Home / Services / About / Reviews /
-// Why Us / Contact). These are REAL ROUTES under app/, not in-page anchors.
-// Each carries an icon for the collapsed rail (the pill markup below).
+// The site menu (Home / Services / About / Reviews / Case Studies / Why Us /
+// Contact). These are REAL ROUTES under app/, not in-page anchors. Each carries
+// an icon for the collapsed rail (the pill markup below).
 const LINKS: NavLink[] = [
   { label: "Home", href: "/", Icon: HomeIcon },
   { label: "Services", href: "/services", Icon: LayersIcon },
   { label: "About", href: "/about", Icon: InfoIcon },
   { label: "Reviews", href: "/reviews", Icon: StarIcon },
+  { label: "Case Studies", href: "/case-studies", Icon: CaseStudiesIcon },
   { label: "Why Us", href: "/why-us", Icon: SparklesIcon },
   { label: "Contact", href: "/contact", Icon: MailIcon },
 ];
@@ -265,12 +267,14 @@ export default function Navbar() {
         {/* Nav links — the left column. Desktop centres them in the frame; below
             md they sit top-left, leaving room to the right for the theme column
             and below for the bottom toggle bar.
-            Six links at 25px/1.1 with a 10px gap ≈ 215px tall. Desktop centres
-            that in the 365px frame (y≈75–290), clearing the "menu" heading above
-            and the socials below. Mobile starts at a fixed top-[84px], so the
-            column ends at y≈299 — which is why the socials moved down to 306
-            (they were at 288 and would now collide). */}
-        <ul className="absolute left-[26px] top-1/2 flex -translate-y-1/2 flex-col gap-[10px] text-[25px] font-light leading-[1.1] tracking-[-0.03em] max-md:top-[84px] max-md:translate-y-0">
+            SEVEN links (Case Studies was added) at 22px/1.1 with a 7px gap
+            ≈ 211px tall — deliberately a touch SHORTER than the old six-link
+            column (25px/gap-10 ≈ 215px), so every other tuned position holds:
+            desktop centres it in the 365px frame clearing the "menu" heading
+            above and the socials below; mobile starts at top-[84px] and ends
+            at y≈295, still clearing the socials at 306. Shrink further before
+            adding an eighth link. */}
+        <ul className="absolute left-[26px] top-1/2 flex -translate-y-1/2 flex-col gap-[7px] text-[22px] font-light leading-[1.1] tracking-[-0.03em] max-md:top-[84px] max-md:translate-y-0">
           {LINKS.map((link) => {
             const active = pathname === link.href;
             return (

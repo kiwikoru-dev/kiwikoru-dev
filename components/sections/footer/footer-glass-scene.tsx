@@ -67,7 +67,7 @@ gsap.registerPlugin(ScrollTrigger);
  * — eyeball + adjust.
  */
 
-const FONT = "/fonts/product-sans-medium.v3.typeface.json";
+const FONT = "/fonts/product-sans-medium.v4.typeface.json";
 const MOUNTAIN_SRC = "/footer/footer-scene.webp";
 // Intrinsic w/h of the mountain cutout. Downsized 3168×1344 → 2046×868 (S1,
 // docs/glass-loading-and-performance-2026-07-12.md) — the SAME 33:14 ratio, so

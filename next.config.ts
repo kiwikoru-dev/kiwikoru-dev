@@ -86,7 +86,7 @@ const nextConfig: NextConfig = {
       // intro-scene, footer-glass-scene, glass-heading-scene, lab/glass).
       // The version in the name is what makes `immutable` safe.
       {
-        source: "/fonts/product-sans-medium.v3.typeface.json",
+        source: "/fonts/product-sans-medium.v4.typeface.json",
         headers: [
           {
             key: "Cache-Control",
