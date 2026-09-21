@@ -21,7 +21,7 @@ export type ResultRow = { metric: string; detail: string };
 export type Stat = { value: string; label: string };
 
 export type CaseStudy = {
-  slug: "forkoff" | "zeroshield";
+  slug: "forkoff" | "zeroshield" | "btcwires" | "thinkverse";
   /** Full display name, incl. any suffix (e.g. "ZeroShield.ai"). */
   name: string;
   /** Glass 3D <h1> text — no "." (not in the subset font). */
@@ -57,6 +57,12 @@ const ABOUT_FORKOFF =
 
 const ABOUT_ZEROSHIELD =
   "KiwiKoru Limited is a cloud architecture and engineering consultancy helping technology companies design, build and operate scalable, resilient systems on AWS. We bring deep expertise in high-availability architecture, real-time data platforms, infrastructure governance, network security, and production infrastructure engineering.";
+
+const ABOUT_BTCWIRES =
+  "KiwiKoru Limited is a cloud architecture and engineering consultancy helping technology companies design, build and operate scalable, resilient systems on AWS. We bring deep expertise in high-availability architecture, real-time data platforms, and production infrastructure engineering.";
+
+const ABOUT_THINKVERSE =
+  "KiwiKoru Limited is a cloud architecture and engineering consultancy helping technology companies design, build and operate scalable, resilient systems on AWS. We bring deep expertise in high-availability architecture, real-time data platforms, infrastructure governance, and production infrastructure engineering.";
 
 export const FORKOFF: CaseStudy = {
   slug: "forkoff",
@@ -345,18 +351,300 @@ export const ZEROSHIELD: CaseStudy = {
   about: ABOUT_ZEROSHIELD,
 };
 
+export const BTCWIRES: CaseStudy = {
+  slug: "btcwires",
+  name: "BTCWires",
+  heading: "BTCWires",
+  tagline: "High-availability AWS platform for a crypto & blockchain media outlet",
+  tag: "Media & Real-Time",
+  cardStat: "99.95% uptime · 15× traffic absorbed",
+  cardBlurb:
+    "A cloud-native, auto-scaling AWS platform for a crypto & blockchain news outlet — absorbing 10–15× news-driven traffic spikes with sub-second market-data freshness.",
+  quickFacts: [
+    { label: "Client", value: "BTCWires" },
+    { label: "Industry", value: "Crypto & blockchain media" },
+    { label: "Platform", value: "High-availability on AWS" },
+    { label: "Engagement", value: "Architecture, build & handover" },
+  ],
+  overview: [
+    "BTCWires is a digital media platform specialising in cryptocurrency and blockchain industry coverage. The platform delivers breaking news, in-depth editorial content, live market pricing, interactive market heatmaps, and AI-generated news summaries serving a global readership that surges dramatically during periods of crypto market volatility.",
+  ],
+  challengeIntro:
+    "BTCWires needed a production-grade cloud platform capable of operating reliably under highly unpredictable load conditions. Crypto markets never sleep, and news-driven traffic spikes can arrive with virtually no warning, routinely reaching 10–15 times normal volume within minutes of a major market event. Key requirements included:",
+  challenge: [
+    "A real-time data pipeline capable of ingesting, processing and surfacing live market data — prices, volumes, heatmaps — with sub-second freshness.",
+    "An application tier that could scale automatically and elastically to absorb extreme traffic spikes without degraded performance or error rates.",
+    "A high-availability database layer tolerant of infrastructure failures, with no single point of failure and automatic recovery.",
+    "Global delivery performance: fast page loads for readers across multiple geographies.",
+    "Operational simplicity: minimal manual intervention to manage scaling, patching, or failover.",
+  ],
+  solutionIntro:
+    "KiwiKoru designed and delivered a fully cloud-native architecture that addressed each requirement directly, combining purpose-built AWS services in a cohesive, production-hardened stack. The design used defence-in-depth for availability: ECS Fargate absorbed application-tier load spikes, Redis shielded the database from read storms, Multi-AZ RDS ensured zero downtime at the data layer, and CloudFront absorbed the majority of global read traffic at the edge — keeping origin load well within capacity even during peak events.",
+  awsServices: [
+    "Amazon ECS (Fargate)",
+    "Amazon Kinesis",
+    "Amazon ElastiCache (Redis)",
+    "Amazon RDS (Multi-AZ)",
+    "Amazon CloudFront",
+    "Amazon Route 53",
+  ],
+  architecture: [
+    {
+      component: "Amazon ECS (Fargate)",
+      role: "Container-based auto-scaling for API and rendering workloads — scales out within seconds during demand spikes with zero server-management overhead.",
+    },
+    {
+      component: "Amazon Kinesis",
+      role: "Real-time ingestion of live market-data streams — price feeds, volume events, and exchange data delivered to the platform with sub-second latency.",
+    },
+    {
+      component: "Amazon ElastiCache (Redis)",
+      role: "In-memory caching layer for market heatmaps, pricing data and AI summaries — eliminates repeated database reads and sustains high-concurrency performance.",
+    },
+    {
+      component: "Amazon RDS (Multi-AZ)",
+      role: "Highly available managed relational database with a synchronous standby replica — automatic failover with no data loss during availability-zone disruptions.",
+    },
+    {
+      component: "Amazon CloudFront",
+      role: "Global CDN serving static assets and cached API responses from edge locations closest to readers — dramatically reduces latency for international audiences.",
+    },
+    {
+      component: "Amazon Route 53",
+      role: "Latency-based DNS routing with health-check failover — automatically directs traffic to the fastest healthy endpoint at all times.",
+    },
+  ],
+  delivered: [
+    {
+      workstream: "Cloud architecture design",
+      detail:
+        "End-to-end reference architecture for a resilient, auto-scaling media platform on AWS.",
+    },
+    {
+      workstream: "Real-time data pipeline",
+      detail:
+        "Kinesis-based ingest pipeline processing live crypto price feeds, market-cap movements, and exchange volume data.",
+    },
+    {
+      workstream: "Containerised application stack",
+      detail:
+        "ECS Fargate task definitions, auto-scaling policies, and CI/CD pipeline integration for zero-downtime deployments.",
+    },
+    {
+      workstream: "Caching & performance layer",
+      detail:
+        "Redis cluster configuration for heatmap data, AI-generated summaries, and live pricing, with TTLs tuned per data type.",
+    },
+    {
+      workstream: "Database & failover setup",
+      detail:
+        "Multi-AZ RDS provisioning with parameter tuning, read-replica configuration, and backup/restore procedures.",
+    },
+    {
+      workstream: "CDN & DNS configuration",
+      detail:
+        "CloudFront distribution setup with custom origins and cache behaviours, and Route 53 latency routing with health checks.",
+    },
+    {
+      workstream: "Observability & alerting",
+      detail:
+        "CloudWatch dashboards, metric alarms, and runbooks covering traffic, error rates, cache-hit ratios, and database health.",
+    },
+  ],
+  headlineStats: [
+    { value: "99.95%", label: "Platform availability (rolling 90-day)" },
+    { value: "< 1 sec", label: "Median global page load" },
+    { value: "15×", label: "Traffic spike absorbed, zero downtime" },
+  ],
+  results: [
+    {
+      metric: "99.95% availability",
+      detail:
+        "Platform availability sustained across rolling 90-day periods post-launch.",
+    },
+    {
+      metric: "< 1 sec global page load",
+      detail:
+        "Median page load time for article and market-data pages globally, via CloudFront edge delivery.",
+    },
+    {
+      metric: "15× spike absorbed",
+      detail:
+        "Peak traffic successfully absorbed during major crypto-market volatility events — with zero downtime.",
+    },
+    {
+      metric: "Real-time data freshness",
+      detail:
+        "Live pricing, market heatmaps, and AI news summaries delivered continuously with sub-second data freshness.",
+    },
+  ],
+  archImage: {
+    src: "/case-studies/btcwires-architecture.png",
+    alt: "BTCWires AWS architecture: Route 53 and CloudFront in front of an ECS Fargate application tier, a Kinesis real-time market-data pipeline, an ElastiCache (Redis) cache, and a Multi-AZ RDS database, with CloudWatch observability.",
+    width: 1558,
+    height: 1172,
+  },
+  about: ABOUT_BTCWIRES,
+};
+
+export const THINKVERSE: CaseStudy = {
+  slug: "thinkverse",
+  name: "ThinkVerse Labs",
+  heading: "ThinkVerse Labs",
+  tagline:
+    "Standardised multi-account AWS landing zone for a high-volume software delivery firm",
+  tag: "Cloud Governance",
+  cardStat: "70% faster provisioning · 40% cost cut",
+  cardBlurb:
+    "A standardised, multi-account AWS landing zone for a 200+ client software firm — self-service environments, enforced governance, and per-client cost visibility.",
+  quickFacts: [
+    { label: "Client", value: "ThinkVerse Labs" },
+    { label: "Industry", value: "Software development & IT outsourcing" },
+    { label: "Platform", value: "Multi-account AWS landing zone" },
+    { label: "Region", value: "Noida, India" },
+  ],
+  overview: [
+    "ThinkVerse Labs is a custom software development and IT outsourcing firm headquartered in Noida, India. Over more than a decade, the company has delivered 500+ software projects across web, mobile, blockchain, AI, and AR/VR for 200+ clients spanning multiple geographies. With project teams operating concurrently across a growing client base, ThinkVerse Labs runs a high-throughput delivery model that demands reliable, repeatable cloud infrastructure at scale.",
+  ],
+  challengeIntro:
+    "As ThinkVerse Labs scaled its client delivery operations, managing cloud environments across hundreds of concurrent projects became operationally complex. Key pain points included:",
+  challenge: [
+    "Environment sprawl — each project required isolated dev, staging, and production accounts, which were provisioned manually and inconsistently.",
+    "No standardisation — infrastructure configurations varied widely across teams, leading to drift, security gaps, and cost overruns.",
+    "Slow onboarding — spinning up a new client environment took several days of manual effort across multiple teams.",
+    "Cost visibility — with 200+ active clients across shared and dedicated accounts, tracking spend per project or client was difficult.",
+    "No governance layer — there was no centralised mechanism to enforce security policies, tagging standards, or access controls at scale.",
+  ],
+  solutionIntro:
+    "KiwiKoru designed and implemented a standardised, multi-account cloud infrastructure platform built on AWS, enabling ThinkVerse Labs to provision, govern, and manage environments across all projects from a single operational model.",
+  awsServices: [
+    "AWS Organizations",
+    "AWS CloudFormation StackSets",
+    "AWS CodePipeline",
+    "AWS CodeCommit",
+    "AWS IAM",
+    "Amazon S3",
+    "Amazon VPC",
+    "AWS Config",
+  ],
+  architecture: [
+    {
+      component: "AWS Organizations",
+      role: "Structured Organizational Units (OUs) for dev, staging, and production workloads. Each client project is assigned a governed account boundary with baseline policies applied automatically at provisioning.",
+    },
+    {
+      component: "CloudFormation StackSets",
+      role: "Deployed cross-account to enforce consistent IAM roles, VPC baselines, logging configurations, and security controls — eliminating manual per-account setup.",
+    },
+    {
+      component: "Reusable template library",
+      role: "A curated library of parameterised CloudFormation templates covering 5 standard project archetypes — web applications, mobile backends, blockchain nodes, and AI workload environments. Version-controlled in CodeCommit.",
+    },
+    {
+      component: "CodePipeline (CI/CD)",
+      role: "Automated deployment pipelines running cfn-lint and cfn-nag validation, executing change sets, and deploying approved stacks — removing manual intervention from the infrastructure release process.",
+    },
+    {
+      component: "Drift detection",
+      role: "Scheduled CloudFormation drift detection across all active stacks. Configuration drift triggers alerts and requires a reviewed change set before remediation — maintaining infrastructure integrity across all environments.",
+    },
+    {
+      component: "AWS Config & tagging",
+      role: "A mandatory tagging taxonomy (client ID, project code, environment, owner) enforced via AWS Config rules, enabling precise cost attribution across the full portfolio.",
+    },
+  ],
+  delivered: [
+    {
+      workstream: "Multi-account landing zone",
+      detail:
+        "Structured AWS Organizations with dedicated OUs and baseline SCPs applied automatically at provisioning, giving every client project a governed account boundary.",
+    },
+    {
+      workstream: "CloudFormation StackSets",
+      detail:
+        "Cross-account deployment of security, networking, and logging baselines — consistent configuration across all environments without manual per-account effort.",
+    },
+    {
+      workstream: "Reusable template library",
+      detail:
+        "Parameterised CloudFormation stacks for 5 standard project archetypes — version-controlled in CodeCommit with changelogs maintained per release.",
+    },
+    {
+      workstream: "Automated CI/CD pipeline",
+      detail:
+        "Template linting, static analysis (cfn-lint, cfn-nag), and change-set review gates integrated into CodePipeline for zero-manual-intervention infrastructure releases.",
+    },
+    {
+      workstream: "Drift detection framework",
+      detail:
+        "Scheduled drift detection with alerting and remediation workflows across all active stacks — infrastructure integrity maintained proactively.",
+    },
+    {
+      workstream: "Tagging & cost allocation",
+      detail:
+        "A mandatory tagging taxonomy with AWS Config enforcement — enabling per-client cloud-spend attribution and compliance reporting for the first time.",
+    },
+    {
+      workstream: "Runbooks & handover docs",
+      detail:
+        "Self-service provisioning runbooks and handover documentation enabling ThinkVerse Labs teams to spin up new environments independently.",
+    },
+  ],
+  headlineStats: [
+    { value: "70%", label: "Faster environment provisioning" },
+    { value: "40%", label: "Infrastructure cost reduction" },
+    { value: "< 2 hrs", label: "Developer onboarding (was days)" },
+  ],
+  results: [
+    {
+      metric: "70% faster provisioning",
+      detail:
+        "New client environments that previously took several days of manual effort across multiple teams now complete in under two hours using the self-service workflow.",
+    },
+    {
+      metric: "40% cost reduction",
+      detail:
+        "Achieved through standardised templates, mandatory tagging, and precise cost attribution — enabling the finance team to produce per-client cloud-spend reports for the first time.",
+    },
+    {
+      metric: "< 2 hours onboarding",
+      detail:
+        "Developer onboarding (previously measured in days) — the self-service account-vending pipeline lets teams provision fully configured environments without infrastructure-team involvement.",
+    },
+    {
+      metric: "Proactive drift detection",
+      detail:
+        "Infrastructure drift, previously undetected until incidents occurred, is now identified and resolved proactively via scheduled detection and automated alerting.",
+    },
+  ],
+  archImage: {
+    src: "/case-studies/thinkverse-architecture.png",
+    alt: "ThinkVerse Labs AWS architecture: a multi-account AWS Organizations landing zone with CloudFormation StackSets, a reusable template library in CodeCommit, a CodePipeline CI/CD flow with drift detection, and AWS Config tagging for cost governance.",
+    width: 1610,
+    height: 782,
+  },
+  about: ABOUT_THINKVERSE,
+};
+
 /**
  * Size divisor for the glass 3D headings on the case-study pages, passed to
  * <PageHeader widthPerSize>. The case-study titles are far longer than the nav
- * pages' (measured width-per-size: "Case Studies" ≈ 6.05, "ZeroShield" ≈ 5.0,
- * "FORKOFF" ≈ 4.6, vs the nav worst case "services" ≈ 3.9). Sizing off the
- * widest of THIS set (with a small safety margin) keeps all three case-study
- * headings at one consistent letter size — and, crucially, keeps them off the
- * shared default so the five nav pages' headings are not shrunk to fit these.
+ * pages' (measured width-per-size: "ThinkVerse Labs" ≈ 7.84, "Case Studies" ≈
+ * 6.27, "ThinkVerse"/"ZeroShield" ≈ 5.0, "BTCWires"/"FORKOFF" ≈ 4.6, vs the nav
+ * worst case "services" ≈ 3.9). Sizing off the widest of THIS set keeps all the
+ * case-study headings at one consistent letter size — and off the shared default
+ * so the five nav pages' headings are not shrunk to fit these. Raising this makes
+ * every case-study heading smaller; it grew from 6.2 when "ThinkVerse Labs" was
+ * added.
  */
-export const CASE_STUDY_HEADING_WPS = 6.2;
+export const CASE_STUDY_HEADING_WPS = 7.8;
 
-export const CASE_STUDIES: CaseStudy[] = [FORKOFF, ZEROSHIELD];
+export const CASE_STUDIES: CaseStudy[] = [
+  FORKOFF,
+  ZEROSHIELD,
+  BTCWIRES,
+  THINKVERSE,
+];
 
 export function getCaseStudy(slug: string): CaseStudy | undefined {
   return CASE_STUDIES.find((c) => c.slug === slug);
